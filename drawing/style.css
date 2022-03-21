@@ -5,13 +5,44 @@ html, body {
 }
 
 body {
-	background-color: #999;
+	background-color: #000;
+}
+
+#generator-stuff button {
+	width: 100%;
+}
+
+#generator-stuff h4 {
+	text-transform: capitalize;
+}
+
+#titel {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#generator-stuff {
+	margin: 50px 0px;
+}
+
+#generator, #history {
+	padding: 2rem;
+}
+
+#idea {
+	font-size: 2rem;
+	/* margin: auto; */
+	text-align: center;
+	/* width: 90%; */
+	transition: all 0.5s;
 }
 
 #center {
-	width: 1280px;
-	margin: auto;
-	background-color: #fff;
+	/* width: 1280px; */
+	/* margin: auto; */
+	margin-top: 100px;
+	border-radius: 0.5rem;
+	background-color: #ddd;
 }
 
 #generator-stuff {
