@@ -3,8 +3,13 @@
 // let fs;
 let fiel;
 let idea;
-let ideas;
+let preDefIdeas;
+let sittingIdeas;
+let objectIdeas;
+let locationIdeas;
+let charactersIdeas;
 let predefined;
+let sitting;
 let ul;
 
 // document start basically.
@@ -16,6 +21,7 @@ let ul;
 	history.addEventListener("click", clearHistory);
 	idea = document.getElementById("idea");
 	predefined = document.getElementById("predefined");
+	sitting = document.getElementById("sitting");
 	fiel = await (await fetch('./ideas.json')).json();
 	// fiel = require('./defined_ideas.json');
 	ul = document.getElementById("history-list");
@@ -33,7 +39,12 @@ let ul;
 	// console.log(fiel);
 	// ideas = fiel.predefined;
 	// idea.innerHTML = arrRan(ideas);
-	ideas = fiel.predefined;
+	preDefIdeas = fiel.predefined;
+	sittingIdeas = fiel.sitting;
+	objectIdeas = fiel.objects;
+	locationIdeas = fiel.locations;
+	charactersIdeas = fiel.characters;
+	console.log(fiel);
 	generate();
 })();
 function generate() {
@@ -44,13 +55,30 @@ function generate() {
 	// console.log(fiel.Ideas);
 
 	// create new predefined idea
-	const randomIdea = arrRan(ideas);
+	let randomIdea;
 	// give the idea to the html... Buuuut... to smooth transition, we gonna do some retarded shit here.
 	// idea.style.transform = "scale(0, 0)";
 
 	// okay so smooth transition didnt work out...
 	// setTimeout(changeIdea(), 1000);
 	// idea.style.transform = "scale(1, 1)";
+	// if (predefined.checked == true) {
+	// 	randomIdea = arrRan(preDefIdeas);
+	// }
+	switch (predefined.checked) {
+		case true:
+			randomIdea = arrRan(preDefIdeas);
+			break;
+		default:
+			break;
+	}
+	switch (sitting.checked) {
+		case true:
+			randomIdea = `${arrRan(charactersIdeas)} sitting ${arrRan(objectIdeas)} ${arrRan(locationIdeas)}`;
+			break;
+		default:
+			break;
+	}
 
 	idea.innerHTML = randomIdea;
 	const li = document.createElement("li");

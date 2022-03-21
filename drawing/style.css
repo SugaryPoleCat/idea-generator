@@ -25,18 +25,15 @@ body {
 	margin: 50px 0px;
 }
 
-#generator, #history {
-	padding: 2rem;
-}
-
-#history-section {
+#generator-section, #history-section {
+	padding: 1rem;
 	background-color: white;
 	border-radius: 0.5rem;
 }
 
 #selectors {
 	padding: 10px;
-	background-color: white;
+	/* background-color: white; */
 	border-radius: 0.5rem;
 }
 
@@ -47,7 +44,7 @@ body {
 	text-align: center;
 	/* width: 90%; */
 	transition: all ease-in-out 0.5s;
-	background-color: white;
+	/* background-color: white; */
 	padding: 10px;
 	border-radius: 0.5rem;
 }
@@ -70,7 +67,7 @@ li {
 }
 
 @media only screen and (max-width: 792px) {
-	#idea, #selectors, #generator, #history {
+	#idea, #selectors, #generator-section, #history-section {
 		padding: 0.5rem
 	}
 }

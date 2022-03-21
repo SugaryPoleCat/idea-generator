@@ -3,5 +3,24 @@
 		"Sugar sitting in a tree",
 		"Cat man painting",
 		"Someone licking ice cream"
+	],
+	"sitting": [
+		"on",
+		"in"
+	],
+	"objects": [
+		"on a couch",
+		"on a desk",
+		"on a chair"
+	],
+	"locations": [
+		"in a train",
+		"in a plane",
+		"in a house"
+	],
+	"characters": [
+		"Sugar",
+		"Sketch",
+		"Scarlett"
 	]
 }
