@@ -1,0 +1,20 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+body {
+	background-color: #999;
+}
+
+#center {
+	width: 1280px;
+	margin: auto;
+	background-color: #fff;
+}
+
+#generator-stuff {
+	display: grid;
+	gap: 1rem;
+}
