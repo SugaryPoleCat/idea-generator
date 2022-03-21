@@ -3,6 +3,7 @@
 // let fs;
 let fiel;
 let idea;
+let ideas;
 let predefined;
 let ul;
 
@@ -15,9 +16,11 @@ let ul;
 	history.addEventListener("click", clearHistory);
 	idea = document.getElementById("idea");
 	predefined = document.getElementById("predefined");
+	fiel = await (await fetch('./ideas.json')).json();
 	// fiel = require('./defined_ideas.json');
-	fiel = await (await fetch('./defined_ideas.json')).json();
-	// had to convert from promise to an async/await to resovle the response instantly. 
+	ul = document.getElementById("history-list");
+	predefined.checked = true;
+	// had to convert from promise to an async/await to resovle the response instantly.
 
 	// .then(res => {
 	// 	// fiel = Promise.resolve(res.json());
@@ -27,10 +30,11 @@ let ul;
 	// 	// fiel = jdata;
 	// 	console.log(jdata);
 	// });
-	console.log(fiel);
-	idea.innerHTML = arrRan(fiel.Ideas);
-	predefined.checked = true;
-	ul = document.getElementById("history-list");
+	// console.log(fiel);
+	// ideas = fiel.predefined;
+	// idea.innerHTML = arrRan(ideas);
+	ideas = fiel.predefined;
+	generate();
 })();
 function generate() {
 	// console.log('shite');
@@ -40,12 +44,19 @@ function generate() {
 	// console.log(fiel.Ideas);
 
 	// create new predefined idea
-	const ideas = fiel.Ideas;
 	const randomIdea = arrRan(ideas);
+	// give the idea to the html... Buuuut... to smooth transition, we gonna do some retarded shit here.
+	// idea.style.transform = "scale(0, 0)";
+
+	// okay so smooth transition didnt work out...
+	// setTimeout(changeIdea(), 1000);
+	// idea.style.transform = "scale(1, 1)";
+
 	idea.innerHTML = randomIdea;
 	const li = document.createElement("li");
 	li.appendChild(document.createTextNode(randomIdea));
 	ul.appendChild(li);
+	// li.style.transform = "scale(1,1)";
 
 	// to create a smooth transition, we need to create 2 texts. One that will be overriden... orrrrrrr....... orrr....
 }
@@ -59,4 +70,8 @@ function clearHistory() {
 function arrRan(arr) {
 	return arr[Math.floor(Math.random() * arr.length)];
 }
+// function changeIdea() {
+// 	idea.style.transform = "scale(0, 0)";
 
+
+// }

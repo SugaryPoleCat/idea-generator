@@ -29,12 +29,27 @@ body {
 	padding: 2rem;
 }
 
+#history-section {
+	background-color: white;
+	border-radius: 0.5rem;
+}
+
+#selectors {
+	padding: 10px;
+	background-color: white;
+	border-radius: 0.5rem;
+}
+
 #idea {
+	margin: 20px 0px;
 	font-size: 2rem;
 	/* margin: auto; */
 	text-align: center;
 	/* width: 90%; */
-	transition: all 0.5s;
+	transition: all ease-in-out 0.5s;
+	background-color: white;
+	padding: 10px;
+	border-radius: 0.5rem;
 }
 
 #center {
@@ -45,7 +60,17 @@ body {
 	background-color: #ddd;
 }
 
-#generator-stuff {
+/* #generator-stuff {
 	display: grid;
 	gap: 1rem;
+} */
+
+li {
+	transition: all ease-in-out 0.5s;
+}
+
+@media only screen and (max-width: 792px) {
+	#idea, #selectors, #generator, #history {
+		padding: 0.5rem
+	}
 }
