@@ -148,7 +148,7 @@ function generate() {
 		generatedIdea = prompt1 + " " + randomIdea;
 		if (prompt2 == prompts[0]) {
 			generatedIdea += " then " + prompt2 + " it";
-		} else {
+		} else if (prompt2 == prompts[1]) {
 			generatedIdea += " then " + prompt2 + " about it";
 		}
 
@@ -167,10 +167,12 @@ function generate() {
 	}
 }
 function clearHistory() {
-	console.log('clearing');
+	console.log('clearing history');
 	while (ul.firstChild) {
 		ul.removeChild(ul.lastChild);
 	}
+	alert('History cleared');
+	console.log('cleared');
 }
 function arrRan(arr) {
 	return arr[Math.floor(Math.random() * arr.length)];
