@@ -106,6 +106,7 @@ let historyUniqueToggle;
 		curIdeaCount = document.getElementById("curIdeaCount");
 		unIdeaCount = document.getElementById("unIdeaCount");
 		historyUniqueToggle = document.getElementById("historyUniqueToggle");
+		historyUniqueToggle.checked = true;
 		unIdeaCurrCount = document.getElementById("unIdeaCurrCount");
 
 		// run generation
