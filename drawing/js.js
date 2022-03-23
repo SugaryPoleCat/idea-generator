@@ -1,8 +1,4 @@
 'use strict';
-// initialize some reusables
-// fs is not needed casue we are not doing express stuff. Yet. Might in the future
-// let fs;
-
 // generator stuff wrapper
 let generator_stuff;
 
@@ -13,22 +9,30 @@ let fiel;
 let idea;
 
 // ideas from file
-let preDefIdeas;
-let sittingIdeas;
-let objectIdeas;
-let locationIdeas;
-let charactersIdeas;
+let preDefIdeas,
+	sittingIdeas,
+	objectIdeas,
+	locationIdeas,
+	charactersIdeas;
 
 // prompt options
-let prWriting;
-let prDrawing;
+let prWriting,
+	prDrawing;
 
 // idea options
-let predefined;
-let sitting;
+let predefined,
+	sitting;
 
 // list
 let ul;
+
+// random stuff
+let ideaCounter,
+	ideaCount,
+	currentIdeaCounter,
+	curIdeaCount,
+	unIdeaCount;
+const uniqueIdeas = [];
 
 // document start basically.
 // i know im using it on chrome so... i dont need to check "derp is this old ie derp"
@@ -81,6 +85,13 @@ let ul;
 		charactersIdeas = fiel.characters;
 		console.log(fiel);
 
+		// random stuff
+		ideaCounter = 0;
+		currentIdeaCounter = 0;
+		ideaCount = document.getElementById("ideaCount");
+		curIdeaCount = document.getElementById("curIdeaCount");
+		unIdeaCount = document.getElementById("unIdeaCount");
+
 		// run generation
 		generate();
 	}
@@ -96,22 +107,6 @@ function generate() {
 		let generatedIdea;
 		const prompts = ['Draw', 'Write about'];
 		let prompt1, prompt2;
-		// give the idea to the html... Buuuut... to smooth transition, we gonna do some retarded shit here.
-		// idea.style.transform = "scale(0, 0)";
-
-		// okay so smooth transition didnt work out...
-		// setTimeout(changeIdea(), 1000);
-		// idea.style.transform = "scale(1, 1)";
-		// if (predefined.checked == true) {
-		// 	randomIdea = arrRan(preDefIdeas);
-		// }
-
-		// generate idea based on the options
-		// switch (prDrawing.checked) {
-		// 	case true:
-		// 		randomIdea += "Write about";
-		// 		break;
-		// }
 
 		// handle prompts
 		if (prDrawing.checked == true && prWriting.checked == false) {
@@ -152,6 +147,12 @@ function generate() {
 			generatedIdea += " then " + prompt2 + " about it";
 		}
 
+		// add to unique list
+		if (!uniqueIdeas.includes(generatedIdea)) {
+			uniqueIdeas.push(generatedIdea);
+			unIdeaCount.textContent = uniqueIdeas.length;
+		}
+
 		// print result
 		idea.innerHTML = generatedIdea;
 
@@ -160,6 +161,12 @@ function generate() {
 		li.appendChild(document.createTextNode(randomIdea));
 		li.classList.add("list-group-item");
 		ul.appendChild(li);
+
+		// count ideas up
+		ideaCounter++;
+		currentIdeaCounter++;
+		ideaCount.textContent = ideaCounter;
+		curIdeaCount.textContent = currentIdeaCounter;
 		return;
 	}
 	catch (e) {
@@ -167,12 +174,19 @@ function generate() {
 	}
 }
 function clearHistory() {
-	console.log('clearing history');
-	while (ul.firstChild) {
-		ul.removeChild(ul.lastChild);
+	try {
+		console.log('clearing history');
+		while (ul.firstChild) {
+			ul.removeChild(ul.lastChild);
+		}
+		currentIdeaCounter = 0;
+		curIdeaCount.textContent = currentIdeaCounter;
+		// alert('History cleared');
+		console.log('cleared');
 	}
-	alert('History cleared');
-	console.log('cleared');
+	catch (e) {
+		generator_stuff.innerHTML = "stuff broke. Check: <br/>" + e;
+	}
 }
 function arrRan(arr) {
 	return arr[Math.floor(Math.random() * arr.length)];
