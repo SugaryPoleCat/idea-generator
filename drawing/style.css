@@ -39,7 +39,7 @@ button {
 }
 
 #generator-section, #history-section {
-	padding: 1rem;
+	/* padding: 0rem; */
 	border-radius: 0.5rem;
 }
 
@@ -70,24 +70,28 @@ button {
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-	background: #9e79da;
-	box-shadow: 0rem 0rem 1rem 0.2rem #9e79da;
+	background: #a771ff;
+	box-shadow: 0rem 0rem 2rem 0.1rem #a771ff;
 }
 
 .btn-primary {
 	border: 0px;
-	background: #7b679c;
-	/* box-shadow: 0rem 0rem 0.1rem 0.1rem rgb(123, 103, 156); */
+	background: #8762c2;
+	/* box-shadow: 0rem 0rem 1rem 0.1rem rgb(123, 103, 156); */
 	transition: all ease-in-out 0.2s;
 }
 
 #counter-stuff {
-	padding: 1rem;
+	padding: 0.5rem 0rem;
 	color: #9d95b6;
 	font-size: 12px;
 }
 
 #themeing {
+	display: none;
+}
+
+#drawingStyleOptions {
 	display: none;
 }
 
@@ -102,5 +106,9 @@ li {
 @media only screen and (max-width: 792px) {
 	#idea, #selectors, #generator-section, #history-section {
 		padding: 0.5rem
+	}
+
+	#genertator-stuff {
+		padding: 0rem 1rem;
 	}
 }

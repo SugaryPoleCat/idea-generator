@@ -31,6 +31,14 @@ let oThemeToggle,
 	oThemeWholesome,
 	themeingOptions;
 
+// drawing style thing
+let drToggle,
+	drawingStyleOptions,
+	drPixel,
+	drNormal,
+	drToon,
+	drReal;
+
 // random stuff
 let ideaCounter,
 	ideaCount,
@@ -109,6 +117,14 @@ let historyUniqueToggle;
 		historyUniqueToggle.checked = true;
 		unIdeaCurrCount = document.getElementById("unIdeaCurrCount");
 
+		// drawing styles
+		drToggle = document.getElementById("drToggle");
+		drawingStyleOptions = document.getElementById("drawingStyleOptions");
+		drPixel = document.getElementById("drPixel");
+		drNormal = document.getElementById("drNormal");
+		drToon = document.getElementById("drToon");
+		drReal = document.getElementById("drReal");
+
 		// run generation
 		generate();
 	} catch (e) {
@@ -153,6 +169,16 @@ function generate() {
 		// }
 
 		// combine it all
+		// prompts of eitehr drawing or writing.
+		/// somethin like
+		// Write
+		// ------------------
+		// style: ASD
+		// action: sitting
+		// person/scenery: Sugar
+		// Summary: Sugar sitting in a tree
+		// --------------------
+		// Challenge: time limit 3
 		generatedIdea = prompt1 + " " + randomIdea;
 		if (prompt2 == prompts[0]) {
 			generatedIdea += " then " + prompt2 + " it";

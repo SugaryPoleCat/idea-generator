@@ -19,7 +19,7 @@
 			<h1 clas="col">Idea generator</h1>
 		</div>
 
-		<div id="generator-stuff" class="grid row">
+		<div id="generator-stuff" class="container">
 
 			<div class="row">
 				<div id="generator" class="col">
@@ -31,6 +31,7 @@
 
 						<div id="selectors" class="row">
 							<h4>Selectors</h4>
+
 							<div id="prompts" class="row">
 								<h6>Prompts</h6>
 								<div class="form-check col">
@@ -44,6 +45,34 @@
 									<label class="form-check-label" for="prDrawing">Draw</label>
 								</div>
 							</div>
+
+							<div id="drawingStyle">
+								<h6>Drawing style</h6>
+								<div class="form-check form-switch row">
+									<input class="form-check-input" type="checkbox" role="switch" id="drToggle" name="drToggle"
+										value="drToggle" checked />
+									<label class="form-check-label" for="drToggle">Toggle random</label>
+								</div>
+								<div id="drawingStyleOptions">
+									<div class="form-check col">
+										<input class="form-check-input" type="radio" id="drPixel" name="drStyle" value="drPixel" checked />
+										<label class="form-check-label" for="drPixel">Pixel art</label>
+									</div>
+									<div class="form-check col">
+										<input class="form-check-input" type="radio" id="drNormal" name="drStyle" value="drNormal" />
+										<label class="form-check-label" for="drNormal">Normal style</label>
+									</div>
+									<div class="form-check col">
+										<input class="form-check-input" type="radio" id="drToon" name="drStyle" value="drToon" />
+										<label class="form-check-label" for="drToon">Toonlike style</label>
+									</div>
+									<div class="form-check col">
+										<input class="form-check-input" type="radio" id="drReal" name="drStyle" value="drReal" />
+										<label class="form-check-label" for="drReal">Real-like style</label>
+									</div>
+								</div>
+							</div>
+
 							<div id="personScenery" class="row">
 								<h6>Person or scenery</h6>
 								<div class="form-check col">
@@ -51,17 +80,20 @@
 										checked />
 									<label class="form-check-label" for="psPerson">Person</label>
 								</div>
+
 								<div class="form-check col">
 									<input class="form-check-input" type="radio" id="psScene" name="psPersonScenery" value="psScene" />
 									<label class="form-check-label" for="psScene">Scenery</label>
 								</div>
 							</div>
+
 							<div id="theme" class="row">
-								<div class="form-check form-switch row">
+								<div class="form-check form-switch">
 									<input class="form-check-input" type="checkbox" role="switch" id="oThemeToggle" name="oThemeToggle"
 										value="oThemeToggle" />
 									<label class="form-check-label" for="oThemeToggle">Theme Toggle</label>
 								</div>
+
 								<div class="row" id="themeing">
 									<div class="form-check col">
 										<input class="form-check-input" type="checkbox" id="oThemeWholesome" name="oThemes"
@@ -97,12 +129,10 @@
 					<button id="clear-history" type="button" class="btn btn-lg btn-primary">Clear</button>
 					<div id="history-section">
 						<h4>history</h4>
-						<div class="row">
-							<div class="form-check form-switch col">
-								<input type="checkbox" role="switch" class="form-check-input" name="historyUniqueToggle"
-									id="historyUniqueToggle" value="historyUniqueToggle" checked />
-								<label for="historyUniqueToggle" class="form-check-label">Add unique ideas only</label>
-							</div>
+						<div class="form-check form-switch">
+							<input type="checkbox" role="switch" class="form-check-input" name="historyUniqueToggle"
+								id="historyUniqueToggle" value="historyUniqueToggle" checked />
+							<label for="historyUniqueToggle" class="form-check-label">Add unique ideas only</label>
 						</div>
 						<ul id="history-list" class="list-group"></ul>
 					</div>
