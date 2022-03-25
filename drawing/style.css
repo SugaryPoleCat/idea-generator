@@ -2,6 +2,7 @@ html, body {
 	margin: 0px;
 	padding: 0px;
 	color: white;
+	min-width: 360px;
 }
 
 body {
@@ -34,10 +35,6 @@ button {
 	position: absolute;
 }
 
-#generator-stuff {
-	padding: 1rem;
-}
-
 #generator-section, #history-section {
 	/* padding: 0rem; */
 	border-radius: 0.5rem;
@@ -61,7 +58,7 @@ button {
 	background-color: #1c1f33;
 	border: 1px solid rgb(84, 67, 119);
 	/* overflow: auto; */
-	box-shadow: 0rem 1rem 5rem 1rem rgba(21, 17, 31, 0.555);
+	box-shadow: 0rem 1rem 2rem 0.1rem rgba(24, 14, 49, 0.555);
 }
 
 .btn {
@@ -69,9 +66,14 @@ button {
 	letter-spacing: 0.1rem;
 }
 
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+.btn-primary:hover, .btn-primary:active {
 	background: #a771ff;
 	box-shadow: 0rem 0rem 2rem 0.1rem #a771ff;
+}
+
+.btn-primary:focus {
+	background: #966bdb;
+	box-shadow: 0rem 0rem 1rem 0.1rem #8c67c7;
 }
 
 .btn-primary {
@@ -95,6 +97,10 @@ button {
 	display: none;
 }
 
+#generator-stuff {
+	padding: 1rem 1rem;
+}
+
 li {
 	transition: all ease-in-out 0.5s;
 	/* font-weight: bold; */
@@ -103,12 +109,18 @@ li {
 	/* background: linear-gradient(180deg, rgb(246, 240, 255) 0%, rgb(246, 240, 255) 60%, rgb(215, 208, 224) 100%); */
 }
 
-@media only screen and (max-width: 792px) {
+@media screen and (min-width: 1200px) {
+	#generator-stuff {
+		padding: 1rem 10rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
 	#idea, #selectors, #generator-section, #history-section {
-		padding: 0.5rem
+		padding: 1rem 0.5rem;
 	}
 
-	#genertator-stuff {
-		padding: 0rem 1rem;
+	#generator-stuff {
+		padding: 1rem 0.5rem;
 	}
 }

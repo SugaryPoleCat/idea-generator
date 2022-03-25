@@ -119,11 +119,21 @@ let historyUniqueToggle;
 
 		// drawing styles
 		drToggle = document.getElementById("drToggle");
+		drToggle.addEventListener("click", drawingStyleToggle);
 		drawingStyleOptions = document.getElementById("drawingStyleOptions");
+		drawingStyleOptions.style.display = 'none';
 		drPixel = document.getElementById("drPixel");
+		drPixel.disabled = true;
+		drPixel.checked = false;
 		drNormal = document.getElementById("drNormal");
+		drNormal.disabled = true;
+		drNormal.checked = false;
 		drToon = document.getElementById("drToon");
+		drToon.disabled = true;
+		drToon.checked = false;
 		drReal = document.getElementById("drReal");
+		drReal.disabled = true;
+		drReal.checked = false;
 
 		// run generation
 		generate();
@@ -260,6 +270,29 @@ function themeToggler() {
 			default:
 				themeingOptions.style.display = "none";
 				oThemeWholesome.disabled = true;
+				break;
+		}
+	} catch (e) {
+		return errorPrint(e);
+	}
+}
+function drawingStyleToggle() {
+	try {
+		switch (this.checked) {
+			case true:
+				console.log('checked');
+				drawingStyleOptions.style.display = "none";
+				drNormal.disabled = true;
+				drToon.disabled = true;
+				drPixel.disabled = true;
+				drReal.disabled = true;
+				break;
+			default:
+				drawingStyleOptions.style.display = "block";
+				drNormal.disabled = false;
+				drToon.disabled = false;
+				drPixel.disabled = false;
+				drReal.disabled = false;
 				break;
 		}
 	} catch (e) {

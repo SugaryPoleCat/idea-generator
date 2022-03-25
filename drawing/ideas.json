@@ -22,5 +22,11 @@
 		"Sugar",
 		"Sketch",
 		"Scarlett"
+	],
+	"drawing_styles": [
+		"toonlike",
+		"realistic",
+		"normal",
+		"pixel"
 	]
 }
