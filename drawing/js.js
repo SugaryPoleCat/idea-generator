@@ -181,7 +181,7 @@ function generate() {
 		// combine it all
 		// prompts of eitehr drawing or writing.
 		/// somethin like
-		// Write
+		// Write, then draw
 		// ------------------
 		// style: ASD
 		// action: sitting

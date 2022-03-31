@@ -36,21 +36,20 @@ button {
 }
 
 #generator-section, #history-section {
-	/* padding: 0rem; */
 	border-radius: 0.5rem;
 }
 
 #selectors {
-	padding: 10px;
+	/* padding: 1rem; */
 	border-radius: 0.5rem;
 }
 
 #idea {
 	font-size: 2rem;
 	text-align: center;
-	transition: all ease-in-out 0.5s;
-	padding: 1rem;
-	border-radius: 0.5rem;
+	padding: 0.5rem;
+	color: #fff;
+	/* box-shadow: 0rem 0rem 1rem 0.5rem #5F70CF34; */
 }
 
 #center {
@@ -66,14 +65,14 @@ button {
 	letter-spacing: 0.1rem;
 }
 
-.btn-primary:hover, .btn-primary:active {
-	background: #a771ff;
-	box-shadow: 0rem 0rem 2rem 0.1rem #a771ff;
+.btn-primary:hover, .btn-primary:active, .btn-primary:active:focus {
+	background: #C75FCF;
+	box-shadow: 0rem 0rem 2rem 0.1rem #C75FCF;
 }
 
 .btn-primary:focus {
-	background: #966bdb;
-	box-shadow: 0rem 0rem 1rem 0.1rem #8c67c7;
+	background: #B064D9;
+	box-shadow: 0rem 0rem 1rem 0.1rem #B064D9;
 }
 
 .btn-primary {
@@ -101,17 +100,30 @@ button {
 	padding: 1rem 1rem;
 }
 
+.form-check-input {
+	background-color: #8762C2;
+}
+
+.form-check-input:checked {
+	background-color: #C75FCF;
+	border-color: #C75FCF;
+}
+
+.form-check-input:focus {
+	background-color: #B064D9;
+	border-color: #B064D9;
+	box-shadow: 0rem 0rem 0.25rem 0.15rem #b064d931;
+}
+
 li {
 	transition: all ease-in-out 0.5s;
-	/* font-weight: bold; */
 	letter-spacing: 0.025rem;
 	background: #E5ECE9;
-	/* background: linear-gradient(180deg, rgb(246, 240, 255) 0%, rgb(246, 240, 255) 60%, rgb(215, 208, 224) 100%); */
 }
 
 @media screen and (min-width: 1200px) {
 	#generator-stuff {
-		padding: 1rem 10rem;
+		padding: 1rem 5rem;
 	}
 }
 

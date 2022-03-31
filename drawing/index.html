@@ -18,20 +18,18 @@
 			<h1 clas="col">Idea generator</h1>
 		</div>
 
-		<div id="generator-stuff">
+		<div id="generator-stuff" class="container">
 
 			<div class="row">
 				<div id="generator" class="col">
 					<button id="generate" class="btn btn-lg btn-primary" type="button">Generate</button>
 					<div id="generator-section">
-						<div class="row">
-							<div id="idea" class="col"></div>
-						</div>
+						<div id="idea"></div>
 
 						<div id="selectors" class="row">
 							<h4>Selectors</h4>
 
-							<div id="prompts" class="row">
+							<div id="prompts">
 								<h6>Prompts</h6>
 								<div class="form-check col">
 									<input class="form-check-input" type="checkbox" id="prWriting" name="prWritingDrawing"
@@ -47,7 +45,7 @@
 
 							<div id="drawingStyle">
 								<h6>Drawing style</h6>
-								<div class="form-check form-switch row">
+								<div class="form-check form-switch">
 									<input class="form-check-input" type="checkbox" role="switch" id="drToggle" name="drToggle"
 										value="drToggle" checked />
 									<label class="form-check-label" for="drToggle">Toggle random</label>
@@ -72,7 +70,7 @@
 								</div>
 							</div>
 
-							<div id="personScenery" class="row">
+							<div id="personScenery">
 								<h6>Person or scenery</h6>
 								<div class="form-check col">
 									<input class="form-check-input" type="radio" id="psPerson" name="psPersonScenery" value="psPerson"
@@ -86,14 +84,15 @@
 								</div>
 							</div>
 
-							<div id="theme" class="row">
+							<div id="theme">
+								<h6>Themeing</h6>
 								<div class="form-check form-switch">
 									<input class="form-check-input" type="checkbox" role="switch" id="oThemeToggle" name="oThemeToggle"
 										value="oThemeToggle" />
 									<label class="form-check-label" for="oThemeToggle">Theme Toggle</label>
 								</div>
 
-								<div class="row" id="themeing">
+								<div id="themeing">
 									<div class="form-check col">
 										<input class="form-check-input" type="checkbox" id="oThemeWholesome" name="oThemes"
 											value="oThemeWholesome" disabled />
@@ -104,7 +103,7 @@
 						</div>
 					</div>
 
-					<div id="counter-stuff" class="row">
+					<div id="counter-stuff" class="container">
 						<div class="row">
 							<div class="col">Ideas currently in history: </div>
 							<div id="curIdeaCount" class="col">0</div>
